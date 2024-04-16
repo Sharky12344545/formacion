@@ -1,1 +1,2 @@
 Este es el contenido del archivo 1
+Este es un cambio en el archivo 1
