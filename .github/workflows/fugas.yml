@@ -1,0 +1,17 @@
+name: Check Fugas
+
+on:
+  push:
+    branches:
+      - fugas
+
+jobs:
+  gitleaks:
+    runs-on: windows-latest  # Se ejecutará en un entorno Windows
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v2  # Utiliza la acción "checkout" para clonar el repositorio
+      - name: Ejecutar Gitleaks
+        uses: zricethezav/gitleaks-action@v5  # Utiliza la acción Gitleaks
+        with:
+          args: --path .  # Especifica la ruta del repositorio a escanear
